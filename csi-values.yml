@@ -1,0 +1,11 @@
+#node:
+#  kubeletPath: /opt/rke/var/lib/kubelet
+
+storageClasses:
+  - name: ebs-sc
+    annotations:
+      storageclass.kubernetes.io/is-default-class: "true"
+    volumeBindingMode: WaitForFirstConsumer
+    reclaimPolicy: Delete
+    parameters:
+      encrypted: "true"
